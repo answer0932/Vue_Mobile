@@ -1,6 +1,6 @@
-# ace_template
+# ace_template_Mobile
 
-> 这是一个PC端的项目模板 vue + vuex + vue-router + ant-design + axios
+> 这是一个移动端的项目模板 vue + vuex + vue-router + cube-ui + axios + stylus
 
 ## Build Setup
 
