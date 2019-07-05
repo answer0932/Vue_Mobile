@@ -20,5 +20,12 @@ export default {
     color: #2c3e50;
     margin-top: 60px;
     font-size: .2rem;
+    a{
+        text-decoration underline
+    }
+    p {
+        margin-bottom .25rem
+    }
+        
 }
 </style>

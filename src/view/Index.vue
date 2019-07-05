@@ -25,6 +25,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+
+    h1 {
+        font-size .4rem;
+        padding-bottom .25rem;
+    }
 
 </style>
