@@ -4,8 +4,20 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state:{},
-    actions: {},
-    mutations: {},
-    getters: {}
+    state:{
+        ContactList: []
+    },
+    actions: {
+        Contact_List({commit}, res){
+            commit('Contact_List', res);
+        }
+    },
+    mutations: {
+        Contact_List(state, payload){
+            state.ContactList = payload;
+        }
+    },
+    getters: {
+        ContactList: state => state.ContactList
+    }
 })

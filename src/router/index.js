@@ -12,6 +12,10 @@ const router = new Router({
     {
       path: '/home',
       component: resolve => require(['@/view/index'], resolve)
+    },
+    {
+      path: '/Contact',
+      component: resolve => require(['@/view/Contact'], resolve)
     }
   ]
 });
