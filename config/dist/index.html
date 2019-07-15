@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Ace_template_mobile</title><link rel=stylesheet href=static/css/animate.css><script src=static/js/jquery.js></script><script src=static/js/pinyin.js></script><link href=/static/css/app.b636109cfb43cc68616d9079d7b173fc.css rel=stylesheet></head><body><div id=app></div><script>+function (window) {
+      /*移动端设计稿宽度*/
+      var documentW = 750;
+      var document = window.document,
+        documentEle = document.documentElement,
+        ResizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize';
+      var Resize_Calc = (function Refresh_Rem() {
+        var clientWidth = documentEle.getBoundingClientRect().width;
+        documentEle.style.fontSize = Math.max(Math.min(20 * (clientWidth / documentW), 11.2), 8.55) * 5 + 'px';
+        return Refresh_Rem;
+      })();
+      documentEle.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+      if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+        document.documentElement.classList.add('ios');
+        if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+          document.documentElement.classList.add('hairline');
+      }
+      if (!document.addEventListener) return;
+      window.addEventListener(ResizeEvent, Resize_Calc, false);
+      document.addEventListener('DOMContentLoaded', Resize_Calc, false);
+    }(window);</script><script type=text/javascript src=/static/js/manifest.9ac4f397af76f931c2d6.js></script><script type=text/javascript src=/static/js/vendor.d4418563950f65ae23ce.js></script><script type=text/javascript src=/static/js/app.822fb4a51e104a390b36.js></script></body><script src=static/js/jquery.js></script><script src=static/js/moment.js></script></html>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-const HOT_NAME = "❤";
+const HOT_NAME = "☆";
 const HOT_USER_LEN = 10;
 export default {
     name: "App",

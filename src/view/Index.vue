@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- <a href="javascript:;" @click="$router.push('/Contact')">aaaaaaa</a> -->
         <h1>ACE 的模板</h1>
         <p>
             <a href="https://didi.github.io/cube-ui/#/zh-CN">Cube UI</a>

@@ -7,15 +7,15 @@
                     {{items.username}}
                 </dd>
             </dl>
-       </div>
+        </div>
         <div class="list-shortcut" @touchstart="onShortcutTouchStart" @touchmove.stop.prevent="onShortcutTouchMove">
-                <ul>
-                    <li class="item" v-for="(item, index) in Contact_List" :key="index" :class="{'active': currentIndex === index}" :data-index="index">{{item.title}}</li>
-                </ul>
-             </div>
-            <div class="list-fixed" ref="fixed" v-show="fixedTitle">
-                <h1 class="fixed-title">{{fixedTitle}}</h1>
-            </div>
+            <ul>
+                <li class="item" v-for="(item, index) in Contact_List" :key="index" :class="{'active': currentIndex === index}" :data-index="index">{{item.title}}</li>
+            </ul>
+        </div>
+        <div class="list-fixed" ref="fixed" v-show="fixedTitle">
+            <h1 class="fixed-title">{{fixedTitle}}</h1>
+        </div>
     </Scroller>
 </template>
 
@@ -50,9 +50,7 @@ export default {
             if (this.scrollY > 0) {
                 return "";
             }
-            return this.Contact_List[this.currentIndex]
-                ? this.Contact_List[this.currentIndex].title
-                : "";
+            return this.Contact_List[this.currentIndex] ? this.Contact_List[this.currentIndex].title : "";
         }
     },
     watch: {
@@ -78,6 +76,7 @@ export default {
                     return;
                 }
             }
+            this._calculateHeight();
             // 当滚动到底部，且-newY大于最后一个元素的上限
             this.currentIndex = listHeight.length - 2;
         },
@@ -96,7 +95,7 @@ export default {
             this.$emit("select", item);
         },
         _scrollTo(index) {
-            if (!index && index !== 0) {
+            if (!index && index != 0) {
                 return;
             }
             if (index < 0) {
@@ -105,10 +104,7 @@ export default {
                 index = this.listHeight - 2;
             }
             this.scrollY = -this.listHeight[index];
-            this.$refs.listview.scrollToElement(
-                this.$refs.listGroup[index],
-                100
-            );
+            this.$refs.listview.scrollToElement(this.$refs.listGroup[index], 100);
         },
         onShortcutTouchMove(e) {
             let firstTouch = e.touches[0];
@@ -122,6 +118,7 @@ export default {
             let firstTouch = e.touches[0];
             this.touch.y1 = firstTouch.pageY;
             this.touch.anchorIndex = anchorIndex;
+            console.log(this.touch);
             this._scrollTo(anchorIndex);
         },
         getData(el, name, val) {
